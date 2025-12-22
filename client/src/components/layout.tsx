@@ -87,15 +87,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             <div className="w-px h-6 bg-gray-200 mx-1 hidden md:block"></div>
 
-            <Button variant="ghost" className="gap-2 hover:bg-primary/10 hover:text-primary px-2">
-              <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center border border-gray-200">
-                <User className="h-4 w-4" />
-              </div>
-              <div className="hidden md:flex flex-col items-start text-xs">
-                <span className="text-gray-500 font-normal">Welcome,</span>
-                <span className="font-semibold text-foreground">Sign In</span>
-              </div>
-            </Button>
+            <Link href="/profile">
+              <Button variant="ghost" className="gap-2 hover:bg-primary/10 hover:text-primary px-2 cursor-pointer">
+                <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+                  <User className="h-4 w-4 text-primary" />
+                </div>
+                <div className="hidden md:flex flex-col items-start text-xs">
+                  <span className="text-muted-foreground font-normal">Welcome,</span>
+                  <span className="font-semibold text-foreground">Profile</span>
+                </div>
+              </Button>
+            </Link>
           </div>
         </div>
 

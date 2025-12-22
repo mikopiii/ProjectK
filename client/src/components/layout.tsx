@@ -156,7 +156,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">About KJM Shop</h4>
             <ul className="space-y-2 text-gray-500">
-              <li className="hover:text-primary cursor-pointer hover:underline">About Us</li>
+              <li><Link href="/about" className="hover:text-primary hover:underline">About Us</Link></li>
               <li className="hover:text-primary cursor-pointer hover:underline">KJM Blog</li>
               <li className="hover:text-primary cursor-pointer hover:underline">KJM Careers</li>
               <li className="hover:text-primary cursor-pointer hover:underline">Policies</li>

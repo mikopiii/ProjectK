@@ -32,16 +32,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+      <header className="bg-card sticky top-0 z-50 shadow-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-4 md:py-5 gap-4 md:gap-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
-            <div className="h-10 w-10 bg-gradient-to-br from-primary to-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+            <div className="h-10 w-10 bg-gradient-to-br from-primary to-orange-500 rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
               K
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-2xl tracking-tight leading-none text-foreground">
-                KJM<span className="text-primary">Shop</span>
+              <span className="font-heading font-bold text-2xl tracking-tight leading-none text-primary">
+                KJM<span className="text-foreground">Shop</span>
               </span>
               <span className="text-[0.6rem] font-medium tracking-wider text-muted-foreground uppercase">
                 Philippines
@@ -51,22 +51,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-2xl relative">
-            <div className="relative w-full flex shadow-sm rounded-lg overflow-hidden ring-1 ring-gray-200 focus-within:ring-2 focus-within:ring-primary transition-shadow">
+            <div className="relative w-full flex shadow-sm rounded-lg overflow-hidden ring-1 ring-border focus-within:ring-2 focus-within:ring-primary transition-shadow">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="bg-gray-50 px-3 text-sm font-medium text-gray-600 hover:bg-gray-100 border-r border-gray-200 flex items-center gap-1 transition-colors">
+                  <button className="bg-input px-3 text-sm font-medium text-foreground hover:bg-opacity-80 border-r border-border flex items-center gap-1 transition-colors">
                     All <ChevronDown className="h-3 w-3" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>Electronics</DropdownMenuItem>
-                  <DropdownMenuItem>Fashion</DropdownMenuItem>
-                  <DropdownMenuItem>Home</DropdownMenuItem>
+                <DropdownMenuContent className="bg-card border-border text-foreground">
+                  <DropdownMenuItem className="hover:bg-foreground/10">Electronics</DropdownMenuItem>
+                  <DropdownMenuItem className="hover:bg-foreground/10">Fashion</DropdownMenuItem>
+                  <DropdownMenuItem className="hover:bg-foreground/10">Home</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <Input 
                 placeholder="Search for local products in the Philippines..." 
-                className="flex-1 border-0 rounded-none focus-visible:ring-0 shadow-none bg-white h-11" 
+                className="flex-1 border-0 rounded-none focus-visible:ring-0 shadow-none bg-input text-foreground placeholder:text-muted-foreground h-11" 
               />
               <Button size="icon" className="h-11 w-12 rounded-none bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">
                 <Search className="h-5 w-5" />
@@ -75,17 +75,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           {/* Icons */}
-          <div className="flex items-center gap-2 md:gap-4 text-gray-600">
+          <div className="flex items-center gap-2 md:gap-4 text-foreground">
             <Button variant="ghost" size="icon" className="hidden md:flex relative hover:text-primary hover:bg-primary/10">
               <Heart className="h-5 w-5" />
             </Button>
             
             <Button variant="ghost" size="icon" className="relative hover:text-primary hover:bg-primary/10">
               <ShoppingCart className="h-5 w-5" />
-              <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 bg-primary text-white border-white text-[10px]">2</Badge>
+              <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 bg-primary text-primary-foreground border-card text-[10px]">2</Badge>
             </Button>
 
-            <div className="w-px h-6 bg-gray-200 mx-1 hidden md:block"></div>
+            <div className="w-px h-6 bg-border mx-1 hidden md:block"></div>
 
             <Link href="/profile">
               <Button variant="ghost" className="gap-2 hover:bg-primary/10 hover:text-primary px-2 cursor-pointer">
@@ -103,10 +103,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Search - Visible only on mobile */}
         <div className="md:hidden px-4 pb-3">
-          <div className="relative w-full flex shadow-sm rounded-lg overflow-hidden ring-1 ring-gray-200 focus-within:ring-2 focus-within:ring-primary transition-shadow">
+          <div className="relative w-full flex shadow-sm rounded-lg overflow-hidden ring-1 ring-border focus-within:ring-2 focus-within:ring-primary transition-shadow">
             <Input 
               placeholder="Search products..." 
-              className="flex-1 border-0 rounded-none focus-visible:ring-0 shadow-none bg-white h-10" 
+              className="flex-1 border-0 rounded-none focus-visible:ring-0 shadow-none bg-input text-foreground placeholder:text-muted-foreground h-10" 
             />
             <Button size="icon" className="h-10 w-10 rounded-none bg-primary text-primary-foreground shadow-none">
               <Search className="h-4 w-4" />
@@ -115,14 +115,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Category & Location Bar */}
-        <div className="bg-white border-b border-gray-100 hidden md:block">
+        <div className="bg-card border-b border-border hidden md:block">
           <div className="max-w-7xl mx-auto px-4 h-10 flex items-center justify-between text-sm">
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-1 text-gray-500 hover:text-primary cursor-pointer transition-colors font-medium">
+              <div className="flex items-center gap-1 text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">
                 <Menu className="h-4 w-4" />
                 <span>All Categories</span>
               </div>
-              <nav className="flex gap-5 text-gray-600 font-medium">
+              <nav className="flex gap-5 text-muted-foreground font-medium">
                 <a href="#" className="hover:text-primary transition-colors">Daily Discover</a>
                 <a href="#" className="hover:text-primary transition-colors">Barangay Deals</a>
                 <a href="#" className="hover:text-primary transition-colors">Local Crafts</a>
@@ -130,7 +130,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </nav>
             </div>
             
-            <div className="flex items-center gap-1 text-gray-500 hover:text-primary cursor-pointer transition-colors">
+            <div className="flex items-center gap-1 text-muted-foreground hover:text-primary cursor-pointer transition-colors">
               <MapPin className="h-3.5 w-3.5" />
               <span>Deliver to: <span className="font-semibold text-foreground">Metro Manila</span></span>
             </div>
@@ -144,7 +144,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 pt-12 pb-6 mt-12 text-sm">
+      <footer className="bg-card border-t border-border pt-12 pb-6 mt-12 text-sm">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Customer Service</h4>

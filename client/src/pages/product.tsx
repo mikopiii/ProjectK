@@ -18,7 +18,7 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="bg-gray-50 pb-12">
+    <div className="bg-background pb-12">
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-8">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8">

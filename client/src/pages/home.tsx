@@ -10,7 +10,7 @@ const ICON_MAP: Record<string, any> = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8 pb-12">
+    <div className="bg-background flex flex-col gap-8 pb-12">
       {/* Hero Section */}
       <div className="w-full bg-white md:pt-4">
         <div className="max-w-7xl mx-auto px-0 md:px-4">

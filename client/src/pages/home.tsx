@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="bg-background flex flex-col gap-8 pb-12">
       {/* Hero Section */}
-      <div className="w-full bg-white md:pt-4">
+      <div className="w-full md:pt-4">
         <div className="max-w-7xl mx-auto px-0 md:px-4">
           <div className="relative aspect-[21/9] md:aspect-[24/8] md:rounded-xl overflow-hidden shadow-sm group">
             <img 
@@ -38,9 +38,9 @@ export default function Home() {
 
       {/* Categories */}
       <div className="max-w-7xl mx-auto px-4 w-full">
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-lg text-gray-700">Categories</h3>
+        <div>
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="font-bold text-lg text-foreground">Categories</h3>
             <div className="flex items-center text-xs font-bold text-primary cursor-pointer hover:underline">
               See All <ChevronRight className="h-3 w-3" />
             </div>
@@ -50,10 +50,10 @@ export default function Home() {
               const Icon = ICON_MAP[cat.icon];
               return (
                 <div key={cat.id} className="flex flex-col items-center gap-3 cursor-pointer group">
-                  <div className="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/20 transition-all duration-300 shadow-sm group-hover:shadow-md">
+                  <div className="w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary group-hover:border-primary/40 transition-all duration-300 shadow-sm group-hover:shadow-md">
                     {Icon && <Icon className="h-7 w-7" strokeWidth={1.5} />}
                   </div>
-                  <span className="text-xs font-medium text-gray-600 text-center group-hover:text-primary transition-colors">
+                  <span className="text-xs font-medium text-muted-foreground text-center group-hover:text-primary transition-colors">
                     {cat.name}
                   </span>
                 </div>
@@ -65,7 +65,7 @@ export default function Home() {
 
       {/* New Products For Sale Grid */}
       <div className="max-w-7xl mx-auto px-4 w-full">
-        <div className="flex items-center gap-2 mb-6 sticky top-[72px] z-40 bg-gray-50/95 backdrop-blur py-4 border-b border-gray-200">
+        <div className="flex items-center gap-2 mb-6 sticky top-[72px] z-40 bg-background/95 backdrop-blur py-4 border-b border-border">
           <h2 className="font-heading font-bold text-xl text-primary uppercase tracking-wide border-b-2 border-primary pb-1">New Products For Sale!</h2>
         </div>
         
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Button variant="outline" className="w-full max-w-xs bg-white border-gray-200 text-gray-500 hover:text-primary hover:border-primary">
+          <Button variant="outline" className="bg-card border-border text-muted-foreground hover:text-primary hover:border-primary hover:bg-card/80">
             See More
           </Button>
         </div>

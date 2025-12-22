@@ -7,8 +7,8 @@ import { Product } from "@/lib/mockData";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/product/${product.id}`}>
-      <Card className="h-full border-none shadow-none hover:shadow-md transition-shadow group cursor-pointer overflow-hidden rounded-lg ring-1 ring-gray-100 bg-white flex flex-col">
-        <div className="relative aspect-square overflow-hidden bg-gray-100">
+      <Card className="h-full border-none shadow-none hover:shadow-lg transition-shadow group cursor-pointer overflow-hidden rounded-lg bg-card flex flex-col">
+        <div className="relative aspect-square overflow-hidden bg-input">
           <img 
             src={product.image} 
             alt={product.title}
@@ -37,16 +37,16 @@ export function ProductCard({ product }: { product: Product }) {
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-gray-200 fill-gray-200'}`} 
+                    className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-muted fill-muted'}`} 
                   />
                 ))}
               </div>
-              <span className="text-[10px] text-gray-500">({product.reviews})</span>
+              <span className="text-[10px] text-muted-foreground">({product.reviews})</span>
             </div>
           </div>
         </CardContent>
 
-        <CardFooter className="p-3 pt-0 flex justify-between items-center text-[10px] text-gray-400 border-t border-dashed border-gray-100 mt-2">
+        <CardFooter className="p-3 pt-0 flex justify-between items-center text-[10px] text-muted-foreground border-t border-dashed border-border mt-2">
           <div className="flex items-center gap-1">
             <MapPin className="w-3 h-3" />
             <span className="truncate max-w-[80px]">{product.location}</span>

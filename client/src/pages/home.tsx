@@ -1,11 +1,11 @@
 import { PRODUCTS, CATEGORIES } from "@/lib/mockData";
 import { ProductCard } from "@/components/product-card";
-import { ChevronRight, Smartphone, Shirt, Home as HomeIcon, Sparkles, Utensils, Car } from "lucide-react";
+import { ChevronRight, Shirt, Sparkles } from "lucide-react";
 import generatedImage from '@assets/generated_images/modern_filipino_digital_marketplace_hero_banner.png';
 import { Button } from "@/components/ui/button";
 
 const ICON_MAP: Record<string, any> = {
-  Smartphone, Shirt, Home: HomeIcon, Sparkles, Utensils, Car
+  Shirt, Sparkles
 };
 
 export default function Home() {
@@ -63,25 +63,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Flash Sale Banner (Mockup) */}
-      <div className="max-w-7xl mx-auto px-4 w-full">
-         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="font-heading font-black text-2xl italic text-orange-500">FLASH <span className="text-primary">SALE</span></div>
-              <div className="flex gap-2 text-sm font-mono">
-                <span className="bg-black text-white px-1.5 py-1 rounded font-bold">02</span> : 
-                <span className="bg-black text-white px-1.5 py-1 rounded font-bold">15</span> : 
-                <span className="bg-black text-white px-1.5 py-1 rounded font-bold">45</span>
-              </div>
-            </div>
-            <div className="text-sm text-gray-500 font-medium">Ending soon! Grab these deals now.</div>
-         </div>
-      </div>
-
-      {/* Daily Discover Grid */}
+      {/* New Products For Sale Grid */}
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className="flex items-center gap-2 mb-6 sticky top-[72px] z-40 bg-gray-50/95 backdrop-blur py-4 border-b border-gray-200">
-          <h2 className="font-heading font-bold text-xl text-primary uppercase tracking-wide border-b-2 border-primary pb-1">Daily Discover</h2>
+          <h2 className="font-heading font-bold text-xl text-primary uppercase tracking-wide border-b-2 border-primary pb-1">New Products For Sale!</h2>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">

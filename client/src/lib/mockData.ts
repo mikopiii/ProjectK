@@ -13,12 +13,9 @@ export interface Product {
 }
 
 export const CATEGORIES = [
-  { id: 'electronics', name: 'Electronics', icon: 'Smartphone' },
-  { id: 'fashion', name: 'Fashion', icon: 'Shirt' },
-  { id: 'home', name: 'Home & Living', icon: 'Home' },
   { id: 'beauty', name: 'Beauty', icon: 'Sparkles' },
-  { id: 'food', name: 'Local Food', icon: 'Utensils' },
-  { id: 'motors', name: 'Motors', icon: 'Car' },
+  { id: 'jewelry', name: 'Jewelry', icon: 'Sparkles' },
+  { id: 'fashion', name: 'Fashion', icon: 'Shirt' },
 ];
 
 export const PRODUCTS: Product[] = [

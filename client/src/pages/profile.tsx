@@ -1,34 +1,40 @@
 import { User, Settings, HelpCircle, Wallet, LogOut, ChevronRight } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export default function Profile() {
+  const [, navigate] = useLocation();
+
   const profileMenuItems = [
     {
       icon: User,
       label: "Account Info",
       description: "Manage your personal information",
-      action: "account-info"
+      action: "account-info",
+      onClick: () => {}
     },
     {
       icon: Settings,
       label: "Settings",
       description: "Customize your preferences",
-      action: "settings"
+      action: "settings",
+      onClick: () => navigate("/settings")
     },
     {
       icon: HelpCircle,
       label: "Help Center",
       description: "Get support and find answers",
-      action: "help-center"
+      action: "help-center",
+      onClick: () => {}
     },
     {
       icon: Wallet,
       label: "Account Balance",
       description: "View your credits and transactions",
-      action: "account-balance"
+      action: "account-balance",
+      onClick: () => {}
     }
   ];
 
@@ -56,7 +62,7 @@ export default function Profile() {
             const Icon = item.icon;
             return (
               <Card key={item.action} className="border-border bg-card hover:bg-opacity-80 transition-all cursor-pointer group overflow-hidden">
-                <button className="w-full p-6 flex items-center justify-between text-left hover:bg-foreground/5 transition-colors">
+                <button onClick={item.onClick} className="w-full p-6 flex items-center justify-between text-left hover:bg-foreground/5 transition-colors" data-testid={`button-${item.action}`}>
                   <div className="flex items-center gap-4 flex-1">
                     <div className="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                       <Icon className="h-6 w-6 text-primary" />

@@ -80,11 +80,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Heart className="h-5 w-5" />
             </Button>
             
-            <Button variant="ghost" className="hover:text-primary hover:bg-primary/10 px-2">
-              <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
-                <ShoppingCart className="h-4 w-4 text-primary" />
-              </div>
-            </Button>
+            <Link href="/cart">
+              <Button variant="ghost" className="hover:text-primary hover:bg-primary/10 px-2" data-testid="button-cart">
+                <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+                  <ShoppingCart className="h-4 w-4 text-primary" />
+                </div>
+              </Button>
+            </Link>
 
             <div className="w-px h-6 bg-border mx-1 hidden md:block"></div>
 

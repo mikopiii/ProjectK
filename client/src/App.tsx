@@ -10,7 +10,9 @@ import About from "@/pages/about";
 import Profile from "@/pages/profile";
 import Policies from "@/pages/policies";
 import Settings from "@/pages/settings";
+import Cart from "@/pages/cart";
 import { Layout } from "@/components/layout";
+import { CartProvider } from "@/lib/cartContext";
 
 function Router() {
   return (
@@ -22,6 +24,7 @@ function Router() {
         <Route path="/profile" component={Profile} />
         <Route path="/policies" component={Policies} />
         <Route path="/settings" component={Settings} />
+        <Route path="/cart" component={Cart} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
@@ -31,10 +34,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <CartProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </CartProvider>
     </QueryClientProvider>
   );
 }

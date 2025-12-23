@@ -4,10 +4,14 @@ import { Star, MapPin, Heart, Share2, Truck, ShieldCheck, MessageCircle, ArrowLe
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/lib/cartContext";
+import { useState } from "react";
 
 export default function ProductPage() {
   const [match, params] = useRoute("/product/:id");
   const id = params?.id;
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
   
   // Find product (strip "dup-" prefix if coming from duplicate list)
   const cleanId = id?.replace('dup-', '');
@@ -79,11 +83,42 @@ export default function ProductPage() {
               {/* Actions */}
               <div className="flex gap-2 md:gap-4 mb-8 flex-wrap">
                 <div className="flex border border-border rounded-md">
-                   <button className="px-2 md:px-3 hover:bg-input border-r border-border text-muted-foreground text-sm md:text-base">-</button>
-                   <input className="w-10 md:w-12 text-center text-sm focus:outline-none py-1 md:py-2 bg-background text-foreground" defaultValue="1" />
-                   <button className="px-2 md:px-3 hover:bg-input border-l border-border text-muted-foreground text-sm md:text-base">+</button>
+                   <button 
+                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                     className="px-2 md:px-3 hover:bg-input border-r border-border text-muted-foreground text-sm md:text-base"
+                     data-testid="button-decrease"
+                   >
+                     -
+                   </button>
+                   <input 
+                     className="w-10 md:w-12 text-center text-sm focus:outline-none py-1 md:py-2 bg-background text-foreground" 
+                     value={quantity}
+                     onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                     data-testid="input-quantity"
+                   />
+                   <button 
+                     onClick={() => setQuantity(quantity + 1)}
+                     className="px-2 md:px-3 hover:bg-input border-l border-border text-muted-foreground text-sm md:text-base"
+                     data-testid="button-increase"
+                   >
+                     +
+                   </button>
                 </div>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 h-auto px-4 md:px-8 py-2 md:py-3 text-sm md:text-base flex-1 md:flex-none">
+                <Button 
+                  variant="outline" 
+                  onClick={() => {
+                    addToCart({
+                      id: product.id,
+                      title: product.title,
+                      price: product.price,
+                      image: product.image,
+                      quantity
+                    });
+                    setQuantity(1);
+                  }}
+                  className="border-primary text-primary hover:bg-primary/5 h-auto px-4 md:px-8 py-2 md:py-3 text-sm md:text-base flex-1 md:flex-none"
+                  data-testid="button-add-to-cart"
+                >
                   Add To Cart
                 </Button>
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto px-4 md:px-10 py-2 md:py-3 text-sm md:text-base shadow-lg shadow-primary/20 flex-1 md:flex-none">

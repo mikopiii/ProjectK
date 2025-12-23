@@ -9,6 +9,7 @@ import ProductPage from "@/pages/product";
 import About from "@/pages/about";
 import Profile from "@/pages/profile";
 import Policies from "@/pages/policies";
+import Settings from "@/pages/settings";
 import { Layout } from "@/components/layout";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/profile" component={Profile} />
         <Route path="/policies" component={Policies} />
+        <Route path="/settings" component={Settings} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

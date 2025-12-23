@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Search, ShoppingCart, User, MapPin, Menu, Heart, Bell, ChevronDown } from "lucide-react";
+import { Search, ShoppingCart, User, MapPin, Menu, Heart, Bell, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
@@ -87,6 +87,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Button>
 
             <div className="w-px h-6 bg-border mx-1 hidden md:block"></div>
+
+            <Link href="/settings">
+              <Button variant="ghost" size="icon" className="hover:text-primary hover:bg-primary/10" data-testid="button-settings">
+                <Settings className="h-5 w-5" />
+              </Button>
+            </Link>
 
             <Link href="/profile">
               <Button variant="ghost" className="gap-2 hover:bg-primary/10 hover:text-primary px-2 cursor-pointer">

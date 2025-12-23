@@ -1,6 +1,6 @@
-import { useRoute } from "wouter";
+import { useRoute, Link } from "wouter";
 import { PRODUCTS } from "@/lib/mockData";
-import { Star, MapPin, Heart, Share2, Truck, ShieldCheck, MessageCircle } from "lucide-react";
+import { Star, MapPin, Heart, Share2, Truck, ShieldCheck, MessageCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +20,12 @@ export default function ProductPage() {
   return (
     <div className="bg-background pb-12">
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-8">
+        {/* Back Button */}
+        <Link href="/">
+          <Button variant="ghost" size="icon" className="mb-4 hover:bg-primary/10 hover:text-primary" data-testid="button-back">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        </Link>
         <div className="bg-card rounded-xl shadow-sm border border-border overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8">
             

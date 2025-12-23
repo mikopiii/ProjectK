@@ -1,7 +1,18 @@
+import { Link } from "wouter";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 export default function About() {
   return (
     <div className="bg-background min-h-screen pb-12">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Back Button */}
+        <Link href="/">
+          <Button variant="ghost" size="icon" className="mb-6 hover:bg-primary/10 hover:text-primary" data-testid="button-back">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        </Link>
+
         <div className="bg-card rounded-xl shadow-sm border border-border overflow-hidden">
           {/* Hero Section */}
           <div className="bg-primary/10 p-8 md:p-16 border-b border-border">

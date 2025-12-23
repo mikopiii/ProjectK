@@ -1,4 +1,4 @@
-import { User, Settings, HelpCircle, Wallet, LogOut, ChevronRight } from "lucide-react";
+import { User, Settings, HelpCircle, Wallet, LogOut, ChevronRight, ArrowLeft } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -40,7 +40,14 @@ export default function Profile() {
 
   return (
     <div className="bg-background min-h-screen pb-12">
-      <div className="max-w-2xl mx-auto px-4 py-12">
+      <div className="max-w-2xl mx-auto px-4 py-8">
+        {/* Back Button */}
+        <Link href="/">
+          <Button variant="ghost" size="icon" className="mb-6 hover:bg-primary/10 hover:text-primary" data-testid="button-back">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        </Link>
+
         {/* Profile Header */}
         <Card className="border-border bg-card mb-8 overflow-hidden">
           <div className="p-8 flex flex-col md:flex-row items-center gap-6">

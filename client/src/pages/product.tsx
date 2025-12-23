@@ -70,38 +70,17 @@ export default function ProductPage() {
                 </div>
               </div>
 
-              {/* Shipping Info Mockup */}
-              <div className="space-y-4 mb-8">
-                 <div className="flex gap-4 text-sm">
-                    <span className="text-muted-foreground w-24 flex-shrink-0">Shipping</span>
-                    <div className="flex flex-col gap-1">
-                       <div className="flex items-center gap-2 text-foreground font-medium">
-                          <Truck className="w-4 h-4 text-muted-foreground" />
-                          <span>Free Shipping</span>
-                       </div>
-                       <div className="text-muted-foreground text-xs">Free shipping for orders over ₱500</div>
-                    </div>
-                 </div>
-                 <div className="flex gap-4 text-sm">
-                    <span className="text-muted-foreground w-24 flex-shrink-0">Location</span>
-                    <div className="flex items-center gap-1 text-foreground">
-                        <MapPin className="w-4 h-4 text-muted-foreground" />
-                        {product.location}
-                    </div>
-                 </div>
-              </div>
-
               {/* Actions */}
-              <div className="flex gap-4 mb-8">
+              <div className="flex gap-2 md:gap-4 mb-8 flex-wrap">
                 <div className="flex border border-border rounded-md">
-                   <button className="px-3 hover:bg-input border-r border-border text-muted-foreground">-</button>
-                   <input className="w-12 text-center text-sm focus:outline-none py-2 bg-background text-foreground" defaultValue="1" />
-                   <button className="px-3 hover:bg-input border-l border-border text-muted-foreground">+</button>
+                   <button className="px-2 md:px-3 hover:bg-input border-r border-border text-muted-foreground text-sm md:text-base">-</button>
+                   <input className="w-10 md:w-12 text-center text-sm focus:outline-none py-1 md:py-2 bg-background text-foreground" defaultValue="1" />
+                   <button className="px-2 md:px-3 hover:bg-input border-l border-border text-muted-foreground text-sm md:text-base">+</button>
                 </div>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 h-auto px-8 py-3">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 h-auto px-4 md:px-8 py-2 md:py-3 text-sm md:text-base flex-1 md:flex-none">
                   Add To Cart
                 </Button>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto px-10 py-3 shadow-lg shadow-primary/20">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto px-4 md:px-10 py-2 md:py-3 text-sm md:text-base shadow-lg shadow-primary/20 flex-1 md:flex-none">
                   Buy Now
                 </Button>
               </div>
@@ -131,10 +110,10 @@ export default function ProductPage() {
           </div>
         </div>
         
-        {/* Product Spec Mockup */}
+        {/* Product Information */}
         <div className="bg-card rounded-xl shadow-sm border border-border p-6 mt-4">
-           <h3 className="bg-input p-3 font-bold text-lg text-foreground mb-4 rounded">Product Specifications</h3>
-           <div className="space-y-2 text-sm max-w-2xl">
+           <h3 className="bg-input p-3 font-bold text-lg text-foreground mb-4 rounded">Product Information</h3>
+           <div className="space-y-3 text-sm max-w-2xl">
               <div className="grid grid-cols-3 gap-4">
                  <span className="text-muted-foreground">Category</span>
                  <span className="col-span-2 text-foreground capitalize">{product.category}</span>
@@ -146,6 +125,25 @@ export default function ProductPage() {
               <div className="grid grid-cols-3 gap-4">
                  <span className="text-muted-foreground">Ships From</span>
                  <span className="col-span-2 text-foreground">{product.location}</span>
+              </div>
+              <div className="border-t border-border pt-3">
+                 <div className="grid grid-cols-3 gap-4 mb-3">
+                    <span className="text-muted-foreground">Shipping</span>
+                    <div className="col-span-2 flex flex-col gap-1">
+                       <div className="flex items-center gap-2 text-foreground font-medium text-sm">
+                          <Truck className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                          <span>Free Shipping</span>
+                       </div>
+                       <div className="text-muted-foreground text-xs">Free shipping for orders over ₱500</div>
+                    </div>
+                 </div>
+                 <div className="grid grid-cols-3 gap-4">
+                    <span className="text-muted-foreground">Location</span>
+                    <div className="col-span-2 flex items-center gap-2 text-foreground">
+                        <MapPin className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                        {product.location}
+                    </div>
+                 </div>
               </div>
            </div>
         </div>

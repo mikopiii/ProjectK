@@ -66,41 +66,44 @@ export default function Cart() {
                       </div>
 
                       {/* Quantity & Actions */}
-                      <div className="flex flex-col gap-3 items-end">
-                        {/* Quantity Selector */}
-                        <div className="flex border border-border rounded-md bg-background">
+                      <div className="flex flex-col gap-3 items-end w-full md:w-auto">
+                        <div className="flex gap-2 w-full md:w-auto justify-between md:justify-end">
+                          {/* Quantity Selector */}
+                          <div className="flex border border-border rounded-md bg-background">
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="px-2 py-1 hover:bg-input text-muted-foreground"
+                              data-testid={`button-decrease-quantity-${item.id}`}
+                            >
+                              <Minus className="w-3.5 h-3.5" />
+                            </button>
+                            <span className="px-3 py-1 text-sm font-medium text-foreground">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              className="px-2 py-1 hover:bg-input text-muted-foreground"
+                              data-testid={`button-increase-quantity-${item.id}`}
+                            >
+                              <Plus className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+
+                          {/* Remove Button */}
                           <button
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="px-2 py-1 hover:bg-input text-muted-foreground"
-                            data-testid={`button-decrease-quantity-${item.id}`}
+                            onClick={() => removeFromCart(item.id)}
+                            className="px-3 py-1 bg-destructive/10 hover:bg-destructive/20 text-destructive rounded-md transition-colors flex items-center gap-1"
+                            data-testid={`button-remove-${item.id}`}
                           >
-                            <Minus className="w-3.5 h-3.5" />
-                          </button>
-                          <span className="px-3 py-1 text-sm font-medium text-foreground">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="px-2 py-1 hover:bg-input text-muted-foreground"
-                            data-testid={`button-increase-quantity-${item.id}`}
-                          >
-                            <Plus className="w-3.5 h-3.5" />
+                            <Trash2 className="w-4 h-4" />
+                            <span className="text-xs font-semibold hidden sm:inline">Remove</span>
                           </button>
                         </div>
 
                         {/* Subtotal */}
-                        <p className="text-foreground font-bold text-sm">
+                        <p className="text-foreground font-bold text-sm w-full text-right">
                           ₱{(item.price * item.quantity).toLocaleString()}
                         </p>
-
-                        {/* Remove Button */}
-                        <button
-                          onClick={() => removeFromCart(item.id)}
-                          className="text-destructive hover:text-destructive/80 transition-colors"
-                          data-testid={`button-remove-${item.id}`}
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
                       </div>
                     </div>
                   ))}

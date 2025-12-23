@@ -148,41 +148,37 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Customer Service</h4>
-            <ul className="space-y-2 text-gray-500">
+            <ul className="space-y-2 text-muted-foreground">
               <li className="hover:text-primary cursor-pointer hover:underline">Help Centre</li>
               <li className="hover:text-primary cursor-pointer hover:underline">Payment Methods</li>
-              <li className="hover:text-primary cursor-pointer hover:underline">KJM Coins</li>
               <li className="hover:text-primary cursor-pointer hover:underline">Order Tracking</li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">About KJM Shop</h4>
-            <ul className="space-y-2 text-gray-500">
+            <ul className="space-y-2 text-muted-foreground">
               <li><Link href="/about" className="hover:text-primary hover:underline">About Us</Link></li>
-              <li className="hover:text-primary cursor-pointer hover:underline">KJM Blog</li>
-              <li className="hover:text-primary cursor-pointer hover:underline">KJM Careers</li>
               <li className="hover:text-primary cursor-pointer hover:underline">Policies</li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Payment</h4>
             <div className="flex gap-2 flex-wrap">
-              <div className="h-6 w-10 bg-gray-100 rounded border border-gray-200 flex items-center justify-center text-[8px] font-bold text-gray-400">GCASH</div>
-              <div className="h-6 w-10 bg-gray-100 rounded border border-gray-200 flex items-center justify-center text-[8px] font-bold text-gray-400">MAYA</div>
-              <div className="h-6 w-10 bg-gray-100 rounded border border-gray-200 flex items-center justify-center text-[8px] font-bold text-gray-400">COD</div>
-              <div className="h-6 w-10 bg-gray-100 rounded border border-gray-200 flex items-center justify-center text-[8px] font-bold text-gray-400">VISA</div>
+              <div className="h-6 w-10 bg-input rounded border border-border flex items-center justify-center text-[8px] font-bold text-muted-foreground">GCASH</div>
+              <div className="h-6 w-10 bg-input rounded border border-border flex items-center justify-center text-[8px] font-bold text-muted-foreground">MAYA</div>
+              <div className="h-6 w-10 bg-input rounded border border-border flex items-center justify-center text-[8px] font-bold text-muted-foreground">COD</div>
             </div>
           </div>
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Follow Us</h4>
-            <div className="flex gap-2 text-gray-400">
-              <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">f</div>
-              <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors cursor-pointer">t</div>
-              <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-colors cursor-pointer">i</div>
+            <div className="flex gap-2 text-muted-foreground">
+              <div className="h-8 w-8 rounded-full bg-input flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer font-bold text-sm">f</div>
+              <div className="h-8 w-8 rounded-full bg-input flex items-center justify-center hover:bg-sky-400 hover:text-white transition-colors cursor-pointer font-bold text-sm">𝕏</div>
+              <div className="h-8 w-8 rounded-full bg-input flex items-center justify-center hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white transition-colors cursor-pointer font-bold text-sm">📷</div>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+        <div className="max-w-7xl mx-auto px-4 border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
           <p>© 2025 KJM Shop Philippines. All Rights Reserved.</p>
           <div className="flex gap-4 mt-2 md:mt-0">
              <span>Country & Region: Philippines</span>

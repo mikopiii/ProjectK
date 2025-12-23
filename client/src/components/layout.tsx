@@ -158,7 +158,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <h4 className="font-bold text-foreground">About KJM Shop</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li><Link href="/about" className="hover:text-primary hover:underline">About Us</Link></li>
-              <li className="hover:text-primary cursor-pointer hover:underline">Policies</li>
+              <li><Link href="/policies" className="hover:text-primary hover:underline">Policies</Link></li>
             </ul>
           </div>
           <div className="space-y-4">

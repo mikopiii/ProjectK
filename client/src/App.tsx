@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import ProductPage from "@/pages/product";
 import About from "@/pages/about";
 import Profile from "@/pages/profile";
+import Policies from "@/pages/policies";
 import { Layout } from "@/components/layout";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
         <Route path="/product/:id" component={ProductPage} />
         <Route path="/about" component={About} />
         <Route path="/profile" component={Profile} />
+        <Route path="/policies" component={Policies} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
